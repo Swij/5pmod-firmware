@@ -2,8 +2,14 @@ manifest:
   remotes:
     - name: zephyrproject-rtos
       url-base: https://github.com/zephyrproject-rtos
+    - name: 5pmod
+      url-base: https://github.com/swij
   projects:
     - name: zephyr
       remote: zephyrproject-rtos
-      revision: v2.5-branch
+      revision: v2.6-branch
       import: true
+    - name: 5pmod-boards
+      remote: 5pmod
+      revision: b3301800f930e58d73758b77a7efa96b5ea6faff
+      path: modules/boards/5pmod-boards
