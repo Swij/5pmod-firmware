@@ -8,14 +8,14 @@
 
 ```
 # Initial repository setup
-cd ..
-west init -l 5pmod-firmware
+#   Warning! Make sure that the parent folder is empty,
+#   West will clone a bunch of repositories to the parent folder. 
+west init -l .
 west update
-cd 5pmod-firmware
 
 # Build and flash application
 . ../zephyr/zephyr-env.sh
-cd example_app
+cd blinky
 west build -b 5pmod_nrf52840
 west flash --softreset
 ```
