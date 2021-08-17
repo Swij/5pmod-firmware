@@ -1,0 +1,9 @@
+{
+    "configurations": [
+        {
+            "name": "Blinky",
+            "compileCommands": "${workspaceFolder}/blinky/build/compile_commands.json"
+        }
+    ],
+    "version": 4
+}

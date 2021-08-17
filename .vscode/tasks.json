@@ -1,0 +1,112 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+
+    // FIXME: Build/flash default not working
+    "options": {
+        "env": {
+            "DEFAULT_BOARD":"5pmod_nrf52840",
+            "DEFAULT_APP":"blinky",
+        }
+    },
+
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "${workspaceFolder}/.vscode/zephyr-run.sh",
+            "args": [
+                "west build -b ${input:board}",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/${input:application}"
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/${input:application}/build/"
+                ]
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build clean",
+            "type": "shell",
+            "command": "${workspaceFolder}/.vscode/zephyr-run.sh",
+            "args": [
+                "west build -p -b ${input:board}",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/${input:application}"
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/${input:application}/build/"
+                ]
+            }
+        },
+        {
+            "label": "Flash application",
+            "type": "shell",
+            "command": "${workspaceFolder}/.vscode/zephyr-run.sh",
+            "args": [
+                "west flash",
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/${input:application}"
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}/${input:application}/build/"
+                ]
+            }
+        },
+    ],
+    "inputs": [
+        /* Applicaiton options */
+        {
+            "type": "pickString",
+            "id": "application",
+            "description": "Which application?",
+            "options": [
+                "blinky"
+            ],
+            "default": "blinky"
+        },
+
+        /* Board options */
+        {
+            "type": "pickString",
+            "id": "board",
+            "description": "Which board?",
+            "options": [
+                {
+                    "label": "5PMOD-nRF52840",
+                    "value": "5pmod_nrf52840"
+                },
+                {
+                    "label": "BBC micro:bit V2",
+                    "value": "bbc_microbit_v2"
+                },
+                {
+                    "label": "nRF52832 DK",
+                    "value": "nrf52dk_nrf52832"
+                },
+                {
+                    "label": "nRF52840 DK",
+                    "value": "nrf52840dk_nrf52840"
+                }
+            ],
+            "default": "5pmod_nrf52840"
+        },
+    ]
+}
