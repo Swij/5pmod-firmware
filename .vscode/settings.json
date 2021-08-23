@@ -1,0 +1,8 @@
+{
+    /* Editor settings (Zephyr guidelines) */
+    "[c]": {
+        "editor.tabSize": 8,
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": false,
+    },
+}
