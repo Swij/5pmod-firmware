@@ -40,4 +40,10 @@ It is also possible add keybindings to run specific tasks, this is done by addin
 ### Debugging
 
 ### Tips and tricks
-Add `"files.associations": {"*.overlay": "dts"}` to your settings.json for devicetree highlighting in overlay files.
+Install the [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake) extension to get syntax highlighting and code completion in CMake files. 
+
+Install the [ShellCheck](https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck) extension for amazing shell script linting.
+
+Install the [DeviceTree](https://marketplace.visualstudio.com/items?itemName=plorefice.devicetree) extension to get syntax highlighting in .dts files.
+
+Add `"files.associations": {"*.overlay": "dts"}` to your settings.json for devicetree syntax highlighting in overlay files. 
