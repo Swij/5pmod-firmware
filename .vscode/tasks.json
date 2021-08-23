@@ -96,6 +96,10 @@
                 {
                     "label": "nRF52840 DK",
                     "value": "nrf52840dk_nrf52840"
+                },
+                {
+                    "label": "nRF52840 dongle",
+                    "value": "nrf52840dongle_nrf52840"
                 }
             ],
             "default": "5pmod_nrf52840"
