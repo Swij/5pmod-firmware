@@ -7,6 +7,7 @@ project(5pmod_blinky)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Target all '.c' files in src folder and include headers in 'include' folder
-FILE(GLOB app_sources src/*.c)
-target_sources(app PRIVATE ${app_sources})
+target_sources(app PRIVATE 
+    src/main.c
+)
 zephyr_include_directories(include/)
