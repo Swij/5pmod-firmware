@@ -38,3 +38,6 @@ A quicker way to run tasks is to add a keybinding (e.g. `Ctrl+Shift+R`) to the c
 It is also possible add keybindings to run specific tasks, this is done by adding the task name to the `args` field in the keybinding.
 
 ### Debugging
+
+### Tips and tricks
+Add `"files.associations": {"*.overlay": "dts"}` to your settings.json for devicetree highlighting in overlay files.
