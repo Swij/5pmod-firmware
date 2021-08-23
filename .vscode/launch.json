@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    //
+    // Launch.json help for C/C++ plugin 
+    // https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "J-Link Zephyr Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/${input:application}/build/zephyr/zephyr.elf",
+            "cwd": "${fileDirname}",
+            "MIMode": "gdb",
+            "targetArchitecture": "arm",
+            "debugServerPath": "JLinkGDBServer",
+            "debugServerArgs": "-device NRF52 -if SWD -nogui",
+            "miDebuggerPath": "gdb-multiarch",
+            "miDebuggerArgs": "${workspaceFolder}/${input:application}/build/zephyr/zephyr.elf",
+            "customLaunchSetupCommands": [
+                {
+                    "text": "target remote localhost:2331",
+                    "description": "run target"
+                },
+                {
+                    "text": "monitor reset",
+                    "description": "run target"
+                }
+            ],
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "logging": {
+                "engineLogging": true
+            },
+        },
+    ],
+    "inputs": [
+        /* Applicaiton options */
+        {
+            "type": "pickString",
+            "id": "application",
+            "description": "Which application?",
+            "options": [
+                "blinky",
+            ],
+            "default": "blinky"
+        }
+    ]
+}

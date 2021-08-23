@@ -38,6 +38,13 @@ A quicker way to run tasks is to add a keybinding (e.g. `Ctrl+Shift+R`) to the c
 It is also possible add keybindings to run specific tasks, this is done by adding the task name to the `args` field in the keybinding.
 
 ### Debugging
+To built in debugger in VS Code can be used to debug code running on a microcontroller. The `launch.json` file contains the debugger configuration.
+
+This project only supports debugging using J-Link right now.
+
+To start debugging simply press `F5` or `Ctrl+Shift+D` and press enter.
+
+Add break points by pressing to the left of the line number on the row you want to break.
 
 ### Tips and tricks
 Install the [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake) extension to get syntax highlighting and code completion in CMake files. 
