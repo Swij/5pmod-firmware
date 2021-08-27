@@ -70,7 +70,8 @@
             "id": "application",
             "description": "Which application?",
             "options": [
-                "blinky"
+                "blinky",
+                "example_app",
             ],
             "default": "blinky"
         },

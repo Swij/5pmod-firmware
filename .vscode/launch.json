@@ -46,6 +46,7 @@
             "description": "Which application?",
             "options": [
                 "blinky",
+                "example_app",
             ],
             "default": "blinky"
         }

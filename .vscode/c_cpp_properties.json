@@ -3,6 +3,10 @@
         {
             "name": "Blinky",
             "compileCommands": "${workspaceFolder}/blinky/build/compile_commands.json"
+        },
+        {
+            "name": "Example app",
+            "compileCommands": "${workspaceFolder}/example_app/build/compile_commands.json"
         }
     ],
     "version": 4
