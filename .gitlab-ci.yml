@@ -2,7 +2,7 @@ stages:
   - build
   - test
 
-image: "docker.io/zephyrprojectrtos/zephyr-build:latest"
+image: "zephyrprojectrtos/zephyr-build:latest"
 
 build-code-job:
   stage: build
