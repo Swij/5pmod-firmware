@@ -7,6 +7,8 @@ LOG_MODULE_REGISTER(smartled);
 #include <devicetree.h>
 #include <drivers/gpio.h>
 #include <drivers/led_strip.h>
+#include <drivers/uart.h>
+#include <usb/usb_device.h>
 
 /* 1000 msec = 1 sec */
 #define SLEEP_TIME_MS 100
@@ -29,6 +31,11 @@ void main(void)
 {
 	int ret;
 	size_t color = 0;
+	const struct device *dev;
+
+	dev = DEVICE_DT_GET(DT_CHOSEN(zephyr_shell_uart));
+	if (!device_is_ready(dev) || usb_enable(NULL)) {
+	}
 
 	if (device_is_ready(smart_led)) {
 		LOG_INF("Found smart LED device %s", smart_led->name);
